@@ -30,3 +30,58 @@ console.log(a, b);
 let graph2: [number, string] = [42.42, "string"];
 let [n, s] = graph2;
 console.log(n, s);
+
+// Objects
+// 1.
+let myObj: object = {
+  name: "alex",
+  age: 43,
+};
+
+console.log(myObj);
+
+// 2. with optional parameter
+let myObj2: { name: string; age: number; hasJob?: boolean } = {
+  name: "alex",
+  age: 43,
+};
+myObj2.hasJob = true;
+console.log(myObj2);
+
+// 3. with Type
+type myObj3Type = {
+  name: string;
+  age: number;
+  hasJob?: boolean;
+};
+
+let myObj3: myObj3Type = {
+  name: "alex",
+  age: 43,
+};
+myObj3.hasJob = true;
+console.log(myObj3);
+// 4. Interface
+interface myObj4Int {
+  name: string;
+  age: 43;
+  hasJob?: boolean;
+}
+
+let myObj4: myObj4Int = {
+  name: "alex",
+  age: 43,
+};
+
+myObj4.hasJob = false;
+console.log(myObj4);
+
+// Enums
+enum Grade {
+  A = 10,
+  B,
+  C,
+  D,
+  E,
+}
+console.log(Grade.E);

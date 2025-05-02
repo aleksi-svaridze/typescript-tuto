@@ -28,3 +28,39 @@ console.log(a, b);
 let graph2 = [42.42, "string"];
 let [n, s] = graph2;
 console.log(n, s);
+// Objects
+// 1.
+let myObj = {
+    name: "alex",
+    age: 43,
+};
+console.log(myObj);
+// 2. with optional parameter
+let myObj2 = {
+    name: "alex",
+    age: 43,
+};
+myObj2.hasJob = true;
+console.log(myObj2);
+let myObj3 = {
+    name: "alex",
+    age: 43,
+};
+myObj3.hasJob = true;
+console.log(myObj3);
+let myObj4 = {
+    name: "alex",
+    age: 43,
+};
+myObj4.hasJob = false;
+console.log(myObj4);
+// Enums
+var Grade;
+(function (Grade) {
+    Grade[Grade["A"] = 10] = "A";
+    Grade[Grade["B"] = 11] = "B";
+    Grade[Grade["C"] = 12] = "C";
+    Grade[Grade["D"] = 13] = "D";
+    Grade[Grade["E"] = 14] = "E";
+})(Grade || (Grade = {}));
+console.log(Grade.E);
