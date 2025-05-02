@@ -1,87 +1,51 @@
-// simple and union types
-let stringsArr: string[] = ["one", "two", "three"];
-let twoKindOfData: (string | number)[] = ["Ford", "Benc", 2020];
-let mixedData: (string | number | boolean)[] = [
-  "string",
-  43,
-  true,
-  45,
-  "string2",
-];
-console.log(stringsArr, twoKindOfData, mixedData);
+// array
+let arr1: string[] = ["one", "two", "three"];
+arr1.push("four");
+console.log(arr1);
 
-// typles
-// 1. here we can add same data
-let ourTuples: [string, number, boolean] = ["alex", 43, true];
-ourTuples.unshift("sj");
-ourTuples.push(45);
-console.log(ourTuples);
+// mixed array with Union type
+let mixedArr: (string | number | boolean)[] = [23, "str", true, 43];
+mixedArr.push(false);
+mixedArr.unshift(true);
+console.log(mixedArr);
 
-// 2. Here we can't add data
-let ourTuples2: readonly [string, number, boolean] = ["alex", 43, true];
-// ourTuples2.push(false) // Does not work
+// mixed array with Tuples
+let mixedArray: [boolean, string, number] = [true, "me", 43];
+// let mixedArray2: readonly [boolean, string, number] = [true, "me", 43];
+mixedArray.unshift(23);
+mixedArray.push("string");
+console.log(mixedArray);
 
-// Named typles
-// 1. destructuring Named typles
-let graph: [x: number, y: number] = [42.42, 41.41];
-let [a, b] = graph;
+// array: named tuples
+let namedArray: [x: number, y: string] = [43, "alex"];
+// destructuring named tuple array
+let [a, b] = namedArray;
 console.log(a, b);
-// 2. destructuring simple typles
-let graph2: [number, string] = [42.42, "string"];
-let [n, s] = graph2;
-console.log(n, s);
+
+// destructuring simple tuple array
+let simpleTupleArray: [number, string] = [14, "Maya"];
+
+let [c, d] = simpleTupleArray;
+console.log(c, d);
 
 // Objects
-// 1.
-let myObj: object = {
-  name: "alex",
-  age: 43,
+type Movie = {
+  title: string;
+  year: number;
+  janre?: string;
+};
+let myObj: Movie = {
+  title: "Passengers",
+  year: 2010,
+  janre: "Fantastic",
 };
 
-console.log(myObj);
+console.log(myObj.year);
 
-// 2. with optional parameter
-let myObj2: { name: string; age: number; hasJob?: boolean } = {
-  name: "alex",
-  age: 43,
-};
-myObj2.hasJob = true;
-console.log(myObj2);
-
-// 3. with Type
-type myObj3Type = {
-  name: string;
-  age: number;
-  hasJob?: boolean;
-};
-
-let myObj3: myObj3Type = {
-  name: "alex",
-  age: 43,
-};
-myObj3.hasJob = true;
-console.log(myObj3);
-// 4. Interface
-interface myObj4Int {
-  name: string;
-  age: 43;
-  hasJob?: boolean;
-}
-
-let myObj4: myObj4Int = {
-  name: "alex",
-  age: 43,
-};
-
-myObj4.hasJob = false;
-console.log(myObj4);
-
-// Enums
+// Enum
 enum Grade {
-  A = 10,
+  A,
   B,
   C,
   D,
-  E,
 }
-console.log(Grade.E);
