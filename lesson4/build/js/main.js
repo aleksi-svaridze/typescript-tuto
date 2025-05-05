@@ -1,5 +1,5 @@
 "use strict";
-let sum = (c, d) => {
-    return c + d;
+let total = (a, ...params) => {
+    return a - params.reduce((prev, curr) => prev + curr);
 };
-console.log(sum(4, 8));
+console.log(total(100, 1, 2, 3, 4, 5));

@@ -1,7 +1,7 @@
-type sumFunction = (a: number, b: number) => number;
+type restTypeFun = (a: number, ...params: number[]) => number;
 
-let sum: sumFunction = (c, d) => {
-  return c + d;
+let total: restTypeFun = (a, ...params) => {
+  return a - params.reduce((prev, curr) => prev + curr);
 };
 
-console.log(sum(4, 8));
+console.log(total(100, 1, 2, 3, 4, 5));
